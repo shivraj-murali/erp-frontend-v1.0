@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 function OTPAuthentication() {
   const [email, setEmail] = useState("");
-  const [otp, setOtp] = useState("");
+  const [otp, setOtp] = useState(null);
   const [authenticated, setAuthenticated] = useState(false);
 
   const handleEmailChange = (e) => {
@@ -10,7 +10,7 @@ function OTPAuthentication() {
   };
 
   const handleOtpChange = (e) => {
-    setOtp(e.target.value);
+    setOtp(Number(e.target.value));
   };
 
   const handleAuthenticate = async (e) => {
@@ -23,11 +23,15 @@ function OTPAuthentication() {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ email, otp }),
+          body: JSON.stringify({
+            email: email,
+            otp: otp,
+          }),
         }
       );
+      const data = await response.json();
 
-      if (response.sucess) {
+      if (data.sucess === "true") {
         setAuthenticated(true);
       } else {
         console.error("Authentication failed");
@@ -48,7 +52,7 @@ function OTPAuthentication() {
           </div>
           <div>
             <label>OTP:</label>
-            <input type="number" value={otp} onChange={handleOtpChange} />
+            <input type="text" value={otp} onChange={handleOtpChange} />
           </div>
           <button type="submit">Authenticate</button>
         </form>
