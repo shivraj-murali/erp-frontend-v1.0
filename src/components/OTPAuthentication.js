@@ -26,8 +26,6 @@ function OTPAuthentication() {
           body: JSON.stringify({ email, otp }),
         }
       );
-      const data = response.json();
-      console.log(data);
 
       if (response.sucess) {
         setAuthenticated(true);
@@ -50,7 +48,7 @@ function OTPAuthentication() {
           </div>
           <div>
             <label>OTP:</label>
-            <input type="text" value={otp} onChange={handleOtpChange} />
+            <input type="number" value={otp} onChange={handleOtpChange} />
           </div>
           <button type="submit">Authenticate</button>
         </form>
