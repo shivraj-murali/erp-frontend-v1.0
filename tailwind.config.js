@@ -16,7 +16,7 @@ export default {
       'bermuda': '#78dcca',
       'mainBg': '#021639',
       'offWhite': '#FAF9F6',
-      'lightMain':'#1b2d4d',
+      'lightMain':'#4e5c74',
       'buttoncta':'#54B862'
     },
     extend: {
