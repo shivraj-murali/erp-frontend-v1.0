@@ -5,6 +5,7 @@ import SignInForm from "./components/SignInForm";
 import ForgotPassword from "./components/ForgotPassword";
 import "./App.css";
 import OTPAuthentication from "./components/OTPAuthentication";
+import CreatePassword from "./components/CreatePassword";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/otp-auth" element={<OTPAuthentication />} />
+          <Route path="/create-pass" element={<CreatePassword />} />
           <Route path="/" element={<SignInForm />} />
         </Routes>
       </div>

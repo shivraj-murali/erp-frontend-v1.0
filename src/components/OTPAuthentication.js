@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 function OTPAuthentication() {
   const [email, setEmail] = useState("");
@@ -57,7 +58,10 @@ function OTPAuthentication() {
           <button type="submit">Authenticate</button>
         </form>
       ) : (
-        <p>Authenticated successfully!</p>
+        <div>
+          <p>Authenticated successfully!</p>
+          <Link to="/create-pass">Enter new password</Link>
+        </div>
       )}
     </div>
   );
