@@ -12,12 +12,12 @@ const SignupAvatar = () => {
   return (
     <>
       <div className="AvatarSection flex">
+        {/* <p className="justify-center">{name}</p> */}
         <img
-          className="inline-block h-6 w-6 rounded-full ring-2 ring-white"
+          className="inline-block h-12 w-12 rounded-full ring-2 ring-white font-playfair"
           src={imageSrc}
           alt=""
         />
-        <p>{name}</p>
       </div>
     </>
   );

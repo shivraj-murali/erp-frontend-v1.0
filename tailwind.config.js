@@ -1,7 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html",
-  "./src/**/*.{js,ts,jsx,tsx}",],
+  "./src/**/*.{js,ts,jsx,tsx}",
+"./src/LoginForm/*.jsx" ],
   theme: {
     colors: {
       transparent: 'transparent',
@@ -17,7 +18,9 @@ export default {
       'mainBg': '#021639',
       'offWhite': '#FAF9F6',
       'lightMain':'#4e5c74',
-      'buttoncta':'#54B862'
+      'buttoncta':'#54B862',
+      'lightBg': 'rgb(51 65 85)',
+      'darkBg': 'rgb(30 41 59)'
     },
     extend: {
       fontFamily: {
