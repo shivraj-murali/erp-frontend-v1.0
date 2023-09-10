@@ -1,8 +1,10 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import  { useState } from "react";
+
+import { Link, useNavigation } from "react-router-dom";
 import "./SignInForm.css";
 
 function SignInForm() {
+  const navigate=useNavigation()
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -32,6 +34,7 @@ function SignInForm() {
 
       if (response.ok) {
         console.log("Sign-in successful");
+        
       } else {
         console.error("Sign-in failed");
       }
@@ -58,7 +61,7 @@ function SignInForm() {
         </div>
         <button type="submit">Sign In</button>
         <p>
-          <Link to="/forgot-password">Forgot Password?</Link>
+          <Link to="/forgotpassword">Forgot Password?</Link>
         </p>
       </form>
     </div>
