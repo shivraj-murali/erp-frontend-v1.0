@@ -2,14 +2,14 @@ import React from "react";
 
 const Sidebar = () => {
   return (
-    <div className="Navbar grid grid-cols-1 gap-6 px-7">
+    <div className="Navbar flex flex-col px-7 pr-0">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="white"
-        className="w-7 h-7 inline"
+        className="w-7 h-7 my-4"
       >
         <path
           strokeLinecap="round"
@@ -24,7 +24,7 @@ const Sidebar = () => {
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="white"
-        className="w-7 h-7 inline"
+        className="w-7 h-7 my-4"
       >
         <path
           strokeLinecap="round"
@@ -39,7 +39,7 @@ const Sidebar = () => {
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="white"
-        className="w-7 h-7 inline"
+        className="w-7 h-7 my-4"
       >
         <path
           strokeLinecap="round"
