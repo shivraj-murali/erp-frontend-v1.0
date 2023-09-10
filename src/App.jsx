@@ -13,17 +13,17 @@ import TempLogin from "./LoginForm/tempLogin";
 export default function App() {
   return (
     <>
-      <div className="landingPage">
+      {/* <div className="landingPage">
         <Navbar />
         <Hero />
         <About />
         <Footer />
-      </div>
-
-      <TempLogin />
-      {/* <div className="dashboard">
-        <Dashboard />
       </div> */}
+
+      {/* <TempLogin /> */}
+      <div className="dashboard">
+        <Dashboard />
+      </div>
 
       {/* <div className="Login-Form">
         <Routes>
