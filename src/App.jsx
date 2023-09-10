@@ -2,13 +2,14 @@
 // import Hero from "../src/LandingPage/Hero/Hero.jsx";
 // import About from "../src/LandingPage/About/About";
 // import Footer from "../src/LandingPage/Footer/Footer";
-import Dashboard from "./Dashboard/Dashboard";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import Dashboard from "./Dashboard/Dashboard";
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // import CreatePassword from "./LoginForm/CreatePassword";
 // import ForgotPassword from "./LoginForm/ForgotPassword";
 // import OTPAuthentication from "./LoginForm/OTPAuthentication";
 // import SignInForm from "./LoginForm/SignInForm";
-import TempLogin from "./LoginForm/tempLogin";
+// import TempLogin from "./LoginForm/tempLogin";
+// import LandingPage from "./LandingPage/LandingPage";
 
 export default function App() {
   return (
@@ -21,9 +22,9 @@ export default function App() {
       </div> */}
 
       {/* <TempLogin /> */}
-      <div className="dashboard">
+      {/* <div className="dashboard">
         <Dashboard />
-      </div>
+      </div> */}
 
       {/* <div className="Login-Form">
         <Routes>
@@ -33,6 +34,8 @@ export default function App() {
           <Route path="/" element={<SignInForm />} />
         </Routes>
       </div> */}
+
+      {/* <LandingPage/> */}
     </>
   );
 }
