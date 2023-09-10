@@ -1,7 +1,10 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigation } from "react-router-dom";
 
 function OTPAuthentication() {
+
+  const navigate=useNavigation()
+
   const [email, setEmail] = useState("");
   const [otp, setOtp] = useState(null);
   const [authenticated, setAuthenticated] = useState(false);

@@ -4,9 +4,9 @@ import axios from "axios";
 import Calendar from "./Calendar";
 import ToDoList from "./ToDoList";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Sidebar from "./Sidebar";
 import TopBar from "./TopBar";
 import WorksOverview from "./WorksOverview";
+import Sidebar from "./SideBar";
 
 const Dashboard = () => {
   const [chartData, setChartData] = useState([
@@ -56,7 +56,7 @@ const Dashboard = () => {
         <TopBar />
 
         <div className="mainPage flex justify-between">
-          <Sidebar />
+          <Sidebar/>
           <WorksOverview />
         </div>
 
