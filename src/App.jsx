@@ -22,9 +22,9 @@ export default function App() {
       </div> */}
 
       {/* <TempLogin /> */}
-      <div className="dashboard">
+      {/* <div className="dashboard">
         <Dashboard />
-      </div>
+      </div> */}
 
       {/* <div className="Login-Form">
         <Routes>
@@ -38,8 +38,4 @@ export default function App() {
       {/* <LandingPage/> */}
     </>
   );
-}
-
-{
-  /* <SignupAvatar /> */
 }

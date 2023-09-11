@@ -9,6 +9,8 @@ import WorksOverview from "./WorksOverview";
 import Sidebar from "./SideBar";
 import MainPageTodo from "./MainPageTodo";
 
+import ProjectList from "./ProjectList";
+
 const Dashboard = () => {
   const [task, setTask] = useState([{}]);
 
@@ -53,7 +55,7 @@ const Dashboard = () => {
 
   return (
     <Router>
-      <div className="  bg-darkBg">
+      <div className="  bg-darkBg h-full">
         <TopBar />
 
         <div
@@ -67,8 +69,9 @@ const Dashboard = () => {
           <PieChart data={chartData} />
         </div>
         <div className="block">
-          <MainPageTodo />
+          <ProjectList />
         </div>
+
         {/* 
         <div>
 

@@ -2,7 +2,10 @@ import React from "react";
 
 const Sidebar = () => {
   return (
-    <div className="Navbar flex flex-col px-7 pr-0">
+    <div
+      style={{ marginRight: "11rem" }}
+      className="Navbar flex flex-col px-7 pr-0 border-2 border-l-0 border-lightBg "
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
