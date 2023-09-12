@@ -28,43 +28,45 @@ const ForgotPasswordPage = () => {
           onSubmit={handleSubmit(onSubmit)}
           className="border-2 w-fit mx-auto p-12"
         >
-          <div className="my-6">
-            <p className="text-center"> Enter your Email</p>
-            <input
-              type="text"
-              className="text-black bg-lightBg mx-auto flex p-2 my-auto text-center mt-3"
-              placeholder="Enter your email-id"
-              {...register("Email", { required: true, pattern: /^\S+@\S+$/i })}
-            />
-          </div>
-
           {isClicked ? (
-            <button
-              className="text-white bg-red font-medium rounded-lg text-sm px-5 py-2.5 text-center block mx-auto"
-              type="submit"
-            >
-              Verify Now
-            </button>
+            <>
+              <div className="my-5">
+                <p className="text-center">Enter OTP</p>
+                <input
+                  type="password"
+                  className="text-black bg-lightBg mx-auto flex p-2 my-auto text-center mt-3"
+                  placeholder="Enter your OTP"
+                  {...register("Password", { required: true })}
+                />
+              </div>
+              <button
+                className="text-white bg-red font-medium rounded-lg text-sm px-5 py-2.5 text-center block mx-auto"
+                type="submit"
+              >
+                Verify Now
+              </button>
+            </>
           ) : (
-            <button
-              onClick={onClick}
-              className="text-white bg-red font-medium rounded-lg text-sm px-5 py-2.5 text-center block mx-auto"
-            >
-              Generate Otp
-            </button>
-          )}
-          {isClicked ? (
-            <div className="my-5">
-              <p className="text-center">Enter OTP</p>
-              <input
-                type="password"
-                className="text-black bg-lightBg mx-auto flex p-2 my-auto text-center mt-3"
-                placeholder="Enter your OTP"
-                {...register("Password", { required: true })}
-              />
-            </div>
-          ) : (
-            <div></div>
+            <>
+              <div className="my-6">
+                <p className="text-center"> Enter your Email</p>
+                <input
+                  type="text"
+                  className="text-black bg-lightBg mx-auto flex p-2 my-auto text-center mt-3"
+                  placeholder="Enter your email-id"
+                  {...register("Email", {
+                    required: true,
+                    pattern: /^\S+@\S+$/i,
+                  })}
+                />
+              </div>
+              <button
+                onClick={onClick}
+                className="text-white bg-red font-medium rounded-lg text-sm px-5 py-2.5 text-center block mx-auto"
+              >
+                Generate Otp
+              </button>
+            </>
           )}
         </form>
       </div>
