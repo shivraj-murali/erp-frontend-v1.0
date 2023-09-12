@@ -8,9 +8,9 @@ import CreatePassword from "./LoginForm/CreatePassword";
 import ForgotPassword from "./LoginForm/ForgotPassword";
 import OTPAuthentication from "./LoginForm/OTPAuthentication";
 import SignInForm from "./LoginForm/SignInForm";
-import TempLogin from "./LoginForm/tempLogin";
+import SignupForm from "./LoginForm/SignupForm";
 import LandingPage from "./LandingPage/LandingPage";
-
+import ForgotPasswordPage from "./LoginForm/ForgotPasswordPage";
 export default function App() {
   return (
     <>
@@ -34,6 +34,14 @@ export default function App() {
           <Route path="/" element={<SignInForm />} />
         </Routes>
       </div> */}
+
+      {/* <div style={{ backgroundColor: "black" }}>
+        <SignupForm />
+      </div> */}
+
+      <div>
+        <ForgotPasswordPage />
+      </div>
 
       {/* <LandingPage/> */}
     </>

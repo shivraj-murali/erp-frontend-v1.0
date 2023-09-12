@@ -23,7 +23,9 @@ export default {
       'darkBg': 'rgb(30 41 59)',
       'iconColor': "rgb(180 83 9)",
       'green': "rgb(132 204 22)",
-      "red": "rgb(244 63 94)"
+      "red": "rgb(244 63 94)",
+      "black":"#000",
+      "grey": "#888"
     },
     extend: {
       fontFamily: {

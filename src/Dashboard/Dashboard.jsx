@@ -59,11 +59,11 @@ const Dashboard = () => {
         <TopBar />
 
         <div
-          style={{ gridTemplateColumns: "1fr 2fr 2fr" }}
-          className="mainPage justify-between grid"
+          style={{ gridTemplateColumns: "1fr 7fr 5fr" }}
+          className="mainPage justify-between grid h-[80vh]"
         >
           <Sidebar />
-          <div className="p-6 pl-0">
+          <div className="p-6 pl-0 pt-0">
             <WorksOverview />
           </div>
           <PieChart data={chartData} />
