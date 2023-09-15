@@ -21,10 +21,9 @@ export default function App() {
         <Footer />
       </div> */}
 
-      {/* <TempLogin /> */}
-      {/* <div className="dashboard">
+      <div className="dashboard">
         <Dashboard />
-      </div> */}
+      </div>
 
       {/* <div className="Login-Form">
         <Routes>
@@ -37,11 +36,11 @@ export default function App() {
 
       {/* <div style={{ backgroundColor: "black" }}>
         <SignupForm />
-      </div> */}
+      </div>
 
       <div>
         <ForgotPasswordPage />
-      </div>
+      </div> */}
 
       {/* <LandingPage/> */}
     </>

@@ -10,6 +10,7 @@ import Sidebar from "./SideBar";
 import MainPageTodo from "./MainPageTodo";
 
 import ProjectList from "./ProjectList";
+import Profile from "./Profile";
 
 const Dashboard = () => {
   const [task, setTask] = useState([{}]);
@@ -54,37 +55,34 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <Router>
-      <div className="  bg-darkBg h-full">
-        <TopBar />
+    <div className="  bg-darkBg h-full">
+      <TopBar />
 
-        <div
-          style={{ gridTemplateColumns: "1fr 7fr 5fr" }}
-          className="mainPage justify-between grid h-[80vh]"
-        >
-          <Sidebar />
-          <div className="p-6 pl-0 pt-0">
-            <WorksOverview />
-          </div>
-          <PieChart data={chartData} />
+      <div
+        style={{ gridTemplateColumns: "1fr 7fr 5fr" }}
+        className="mainPage justify-between grid h-screen "
+      >
+        <Sidebar />
+        <div className="p-6 pl-0 pt-0">
+          <WorksOverview />
         </div>
-        <div className="block">
-          <ProjectList />
-        </div>
-
-        {/* 
-        <div>
-
-        {/* <h1>Calendar Example</h1> */}
-        {/* <Calendar task={task}/> */}
-
-        {/* <h1>TODO</h1>
-            <ToDoList />
-        
-        </div> 
-        */}
+        <PieChart data={chartData} />
       </div>
-    </Router>
+
+      <div className="block">
+        <ProjectList />
+      </div>
+
+      <div>
+        <h1>Calendar Example</h1>
+        <Calendar task={task} />
+
+        <h1>TODO</h1>
+        <ToDoList />
+
+        <Profile />
+      </div>
+    </div>
   );
 };
 

@@ -107,7 +107,7 @@ const WorksOverview = () => {
           </svg>
           <a href="#">
             <h3 className="text-xl font-semibold tracking-tight text-gray-900 mb-2 text-center">
-              Completed Task
+              Completed
             </h3>
           </a>
           <p className="text-white text-5xl text-center mb-3 font-normal text-gray-500">
