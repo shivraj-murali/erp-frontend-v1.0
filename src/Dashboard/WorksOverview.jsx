@@ -32,7 +32,7 @@ const WorksOverview = () => {
   }, []);
 
   return (
-    <div className=" p-4 rounded-lg mx-auto my-0 h-full justify-center">
+    <div className="  rounded-lg mx-auto my-0 h-full justify-center">
       <h2
         style={{ fontSize: "2rem" }}
         className="font-semibold mb-6 text-center"
@@ -90,7 +90,7 @@ const WorksOverview = () => {
 
         {/* Third Div */}
 
-        <div className="max-w-sm p-6  border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex-initial mx-3">
+        <div className="max-w-sm p-6   border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex-initial mx-3">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

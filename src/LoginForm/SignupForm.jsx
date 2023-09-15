@@ -1,14 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 import { useForm } from "react-hook-form";
 
 const SignupForm = () => {
+  const [dataa, setData] = useState({email: "", password: ""})
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) =>(setData(data));
+  // const onSubmit = getLoginDetails;
   console.log(errors);
+
+  async function getLoginDetails(data) {
+    const res = await axios.post(
+      "https://erp-auth.onrender.com/employee/signin",
+      data
+    );
+  }
 
   return (
     <div className="bg-mainBg h-screen">
@@ -26,7 +36,7 @@ const SignupForm = () => {
             type="text"
             className="text-black bg-lightBg mx-auto flex p-2 my-auto text-center mt-3"
             placeholder="Enter your email-id"
-            {...register("Email", { required: true, pattern: /^\S+@\S+$/i })}
+            {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
           />
         </div>
         <div className="my-5">
@@ -35,7 +45,7 @@ const SignupForm = () => {
             type="password"
             className="text-black bg-lightBg mx-auto flex p-2 my-auto text-center mt-3"
             placeholder="Enter your password"
-            {...register("Password", { required: true })}
+            {...register("password", { required: true })}
           />
         </div>
         <button

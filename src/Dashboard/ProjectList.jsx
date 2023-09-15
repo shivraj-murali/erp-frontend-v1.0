@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { InfinitySpin } from "react-loader-spinner";
+import Sidebar from "./SideBar";
+import TopBar from "./TopBar";
 const ProjectList = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [task, setTask] = useState([]);
@@ -30,18 +32,25 @@ const ProjectList = () => {
     );
   }
   return (
-    <div>
-      <h2 className="text-4xl text-center my-4 mt-6">Project List</h2>
-      {isLoading ? (
-        <Loader />
-      ) : (
-        <div className="relative overflow-x-auto shadow-md sm:rounded-lg bg-mainBg">
-          <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-            <TableHead />
-            <TableElements task={task} />
-          </table>
+    <div className="  bg-darkBg h-full">
+      <TopBar />
+      <div className="grid" style={{ gridTemplateColumns: "1fr 12fr" }}>
+        <Sidebar />
+
+        <div style={{ marginLeft: "-2rem" }}>
+          <h2 className="text-4xl text-center my-4 mt-6">Project List</h2>
+          {isLoading ? (
+            <Loader />
+          ) : (
+            <div className="relative overflow-x-auto shadow-md sm:rounded-lg bg-mainBg">
+              <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                <TableHead />
+                <TableElements task={task} />
+              </table>
+            </div>
+          )}
         </div>
-      )}
+      </div>
     </div>
   );
 };
