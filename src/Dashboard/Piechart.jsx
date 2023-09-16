@@ -3,7 +3,9 @@ import { ResponsivePie } from "@nivo/pie";
 
 const PieChart = ({ data }) => {
   return (
-    <div style={{ height: "400px" }} className="font-white">
+    // <></>
+    <div style={{ height: "400px" }} className="font-white my-auto ">
+      <h2 className="text-center text-xl font-semibold">Pie Chart</h2>
       <ResponsivePie
         data={data}
         margin={{ top: 40, right: 80, bottom: 80, left: 80 }}

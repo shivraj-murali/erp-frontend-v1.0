@@ -32,12 +32,18 @@ const WorksOverview = () => {
   }, []);
 
   return (
-    <div className="border-2 border-lightBg p-5 rounded-lg">
-      <h2 style={{ fontSize: "2rem" }} className="font-semibold mb-4">
+    <div className="  rounded-lg mx-auto my-0 h-full justify-center">
+      <h2
+        style={{ fontSize: "2rem" }}
+        className="font-semibold mb-6 text-center"
+      >
         Works Overview
       </h2>
-      <div className="flex pr-0 justify-between">
-        <div className="mx-5 ml-0">
+      <div
+        style={{ gridTemplateColumns: "1fr 1fr 1fr" }}
+        className=" grid pr-0 justify-between flex-initial"
+      >
+        <div className="max-w-sm p-6  border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex-initial mx-3">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -50,13 +56,19 @@ const WorksOverview = () => {
               clipRule="evenodd"
             />
           </svg>
-          <h3 className="text-xl">Total Projects</h3>
-          <p className="text-white text-5xl text-center">
+          <a href="#">
+            <h3 className="text-xl font-semibold tracking-tight text-gray-900 mb-2 text-center">
+              Total Projects
+            </h3>
+          </a>
+          <p className="text-white text-5xl text-center text-gray-500">
             <CountUp end={proj} />
           </p>
         </div>
 
-        <div className="block flex-col mx-5">
+        {/* Second Div */}
+
+        <div className="max-w-sm p-6  border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex-initial mx-3">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -65,12 +77,20 @@ const WorksOverview = () => {
           >
             <path d="M5.566 4.657A4.505 4.505 0 016.75 4.5h10.5c.41 0 .806.055 1.183.157A3 3 0 0015.75 3h-7.5a3 3 0 00-2.684 1.657zM2.25 12a3 3 0 013-3h13.5a3 3 0 013 3v6a3 3 0 01-3 3H5.25a3 3 0 01-3-3v-6zM5.25 7.5c-.41 0-.806.055-1.184.157A3 3 0 016.75 6h10.5a3 3 0 012.683 1.657A4.505 4.505 0 0018.75 7.5H5.25z" />
           </svg>
-          <h3 className="text-xl">Total Tasks</h3>
-          <p className="text-white text-5xl text-center">
+          <a href="#">
+            <h3 className="text-xl font-semibold tracking-tight text-gray-900 mb-2 text-center">
+              Total Tasks
+            </h3>
+          </a>
+          <p className="text-white text-5xl text-center mb-3 font-normal text-gray-500">
             <CountUp end={totalTask} />
           </p>
         </div>
-        <div>
+        {/* Temp Div */}
+
+        {/* Third Div */}
+
+        <div className="max-w-sm p-6   border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex-initial mx-3">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -85,12 +105,90 @@ const WorksOverview = () => {
               d="M11.35 3.836c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m8.9-4.414c.376.023.75.05 1.124.08 1.131.094 1.976 1.057 1.976 2.192V16.5A2.25 2.25 0 0118 18.75h-2.25m-7.5-10.5H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V18.75m-7.5-10.5h6.375c.621 0 1.125.504 1.125 1.125v9.375m-8.25-3l1.5 1.5 3-3.75"
             />
           </svg>
-
-          <h3 className="text-xl">Completed Task</h3>
-          <p className="text-white text-5xl block text-center	">
+          <a href="#">
+            <h3 className="text-xl font-semibold tracking-tight text-gray-900 mb-2 text-center">
+              Completed
+            </h3>
+          </a>
+          <p className="text-white text-5xl text-center mb-3 font-normal text-gray-500">
             <CountUp end={task} />
           </p>
         </div>
+        <div className="max-w-sm p-6  border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex-initial mx-3 my-3">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-16 h-16 mx-auto my-0 flex"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M11.35 3.836c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m8.9-4.414c.376.023.75.05 1.124.08 1.131.094 1.976 1.057 1.976 2.192V16.5A2.25 2.25 0 0118 18.75h-2.25m-7.5-10.5H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V18.75m-7.5-10.5h6.375c.621 0 1.125.504 1.125 1.125v9.375m-8.25-3l1.5 1.5 3-3.75"
+            />
+          </svg>
+          <a href="#">
+            <h3 className="text-xl font-semibold tracking-tight text-gray-900 mb-2 text-center">
+              Completed Task
+            </h3>
+          </a>
+          <p className="text-white text-5xl text-center mb-3 font-normal text-gray-500">
+            <CountUp end={task} />
+          </p>
+        </div>
+
+        <div className="max-w-sm p-6  border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex-initial mx-3 my-3">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-16 h-16 mx-auto my-0 flex"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M11.35 3.836c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m8.9-4.414c.376.023.75.05 1.124.08 1.131.094 1.976 1.057 1.976 2.192V16.5A2.25 2.25 0 0118 18.75h-2.25m-7.5-10.5H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V18.75m-7.5-10.5h6.375c.621 0 1.125.504 1.125 1.125v9.375m-8.25-3l1.5 1.5 3-3.75"
+            />
+          </svg>
+          <a href="#">
+            <h3 className="text-xl font-semibold tracking-tight text-gray-900 mb-2 text-center">
+              Completed Task
+            </h3>
+          </a>
+          <p className="text-white text-5xl text-center mb-3 font-normal text-gray-500">
+            <CountUp end={task} />
+          </p>
+        </div>
+
+        <div className="max-w-sm p-6  border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 flex-initial mx-3 my-3">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-16 h-16 mx-auto my-0 flex"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M11.35 3.836c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m8.9-4.414c.376.023.75.05 1.124.08 1.131.094 1.976 1.057 1.976 2.192V16.5A2.25 2.25 0 0118 18.75h-2.25m-7.5-10.5H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V18.75m-7.5-10.5h6.375c.621 0 1.125.504 1.125 1.125v9.375m-8.25-3l1.5 1.5 3-3.75"
+            />
+          </svg>
+          <a href="#">
+            <h3 className="text-xl font-semibold tracking-tight text-gray-900 mb-2 text-center">
+              Completed Task
+            </h3>
+          </a>
+          <p className="text-white text-5xl text-center mb-3 font-normal text-gray-500">
+            <CountUp end={task} />
+          </p>
+        </div>
+        {/* Temp Div */}
       </div>
     </div>
   );
