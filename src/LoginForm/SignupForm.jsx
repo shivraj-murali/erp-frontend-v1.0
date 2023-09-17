@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Link, useNavigation } from "react-router-dom";
 
 const SignupForm = () => {
   const [verified, setVerified] = useState(true);
@@ -62,7 +63,7 @@ const SignupForm = () => {
       <p className="text-xl font-jakarta text-center py-5 ">Welcome Back</p>
       <form onSubmit={getLoginDetails} className="border-2 w-fit mx-auto p-12">
         <div className="my-6">
-          <p className="text-center">Email Address</p>
+          <p className="text-center"> Email Address </p>
           {verified ? (
             <input
               type="email"

@@ -8,6 +8,8 @@ import ProjectList from "./Dashboard/ProjectList";
 import LandingPage from "./LandingPage/LandingPage";
 import SignupForm from "./LoginForm/SignupForm";
 import Calendar from "./Dashboard/Calendar";
+import CreateOTP from "./LoginForm/CreateOTP";
+import ForgotPassword from "./ForgotPassword";
 
 export default function App() {
   return (
@@ -25,7 +27,7 @@ export default function App() {
       </div> */}
       {/* <Calendar /> */}
       {/* <ProjectList /> */}
-      <SignupForm/>
+      {/* <SignupForm/> */}
       {/* <div className="Login-Form">
         <Routes>
           <Route path="/forgot-password" element={<ForgotPassword />} />
@@ -40,8 +42,12 @@ export default function App() {
       </div> */}
 
       {/* <div>
-        <ForgotPasswordPage />
+        <CreateOTP />
       </div> */}
+
+      <div>
+        <ForgotPassword />
+      </div>
     </>
   );
 }
