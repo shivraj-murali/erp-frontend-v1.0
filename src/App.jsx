@@ -23,9 +23,9 @@ export default function App() {
       {/* <div className="dashboard">
         <HomePage />
       </div> */}
-      <Calendar />
+      {/* <Calendar /> */}
       {/* <ProjectList /> */}
-
+      <SignupForm/>
       {/* <div className="Login-Form">
         <Routes>
           <Route path="/forgot-password" element={<ForgotPassword />} />
