@@ -41,13 +41,13 @@ export default function App() {
         <SignupForm />
       </div> */}
 
-      {/* <div>
-        <CreateOTP />
-      </div> */}
-
       <div>
-        <ForgotPassword />
+        <CreateOTP />
       </div>
+
+      {/* <div>
+        <ForgotPassword />
+      </div> */}
     </>
   );
 }
