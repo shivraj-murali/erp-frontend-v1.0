@@ -15,7 +15,7 @@ const CreateOTP = () => {
 
     if (email.length > 0) {
       const response = await fetch(
-        "https://erp-auth.onrender.com/employee/signin",
+        "https://erp-auth.onrender.com/employee/sendotp",
         {
           method: "POST",
           headers: {
