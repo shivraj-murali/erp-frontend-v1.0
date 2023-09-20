@@ -8,6 +8,18 @@ const CreateOTP = () => {
   const [email, setEmail] = useState("");
   const [otp, setOtp] = useState("");
   const [isClicked, setIsClicked] = useState(false);
+  const [isTrue, setIsTrue] = useState(false);
+
+  function Button() {
+    return (
+      <button
+        className="text-white bg-red font-medium rounded-lg text-sm px-5 py-2.5 text-center flex mx-auto my-4"
+        onClick={handleGenerateOTP}
+      >
+        Generate OTP
+      </button>
+    );
+  }
 
   async function handleGenerateOTP(e) {
     e.preventDefault();
@@ -26,7 +38,36 @@ const CreateOTP = () => {
       );
 
       const result = await response.json();
-      console.log(result);
+      console.log(result.sucess);
+
+      if (result.sucess == true) {
+        setIsTrue(true);
+      } else {
+        toast.error("Enter a valid email", {
+          position: "top-right",
+          autoClose: 1500,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "dark",
+        });
+        setInterval(() => window.location.reload(), 3000);
+      }
+
+      // result.sucess == true
+      //   ? setIsTrue(true)
+      //   : toast.error("Enter a valid email", {
+      //       position: "top-right",
+      //       autoClose: 1500,
+      //       hideProgressBar: false,
+      //       closeOnClick: true,
+      //       pauseOnHover: true,
+      //       draggable: true,
+      //       progress: undefined,
+      //       theme: "dark",
+      //     });
     } else {
       toast.error("Enter a valid email", {
         position: "top-right",
@@ -38,8 +79,8 @@ const CreateOTP = () => {
         progress: undefined,
         theme: "dark",
       });
-      // console.log(res.response.data);
       setIsClicked(false);
+      setIsTrue(false);
     }
   }
 
@@ -59,8 +100,6 @@ const CreateOTP = () => {
     );
 
     const result = await response.json();
-
-    console.log(result);
 
     if (result.sucess == "true") {
       toast.success("OTP Verified Successfully", {
@@ -118,7 +157,7 @@ const CreateOTP = () => {
             </button>
           )}
 
-          {isClicked ? (
+          {isClicked && isTrue ? (
             <div className="my-6">
               <p className="text-center">Enter OTP</p>
 
