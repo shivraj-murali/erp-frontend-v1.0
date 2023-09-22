@@ -1,9 +1,19 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { InfinitySpin } from "react-loader-spinner";
 import Sidebar from "./SideBar";
 import TopBar from "./TopBar";
+import { useNavigate } from "react-router-dom";
 const ProjectList = () => {
+  const navigate=useNavigate()
+
+  useEffect(
+    ()=>{
+      if(!localStorage.getItem('emp_id')){
+        navigate('/login')
+      }
+    },
+  [])
   const [isLoading, setIsLoading] = useState(false);
   const [task, setTask] = useState([]);
   useEffect(() => {

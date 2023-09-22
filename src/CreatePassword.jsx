@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import  { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const ForgotPassword = () => {
+const CreatePassword = () => {
   const [password, setPassword] = useState("");
   const [passwordV, setPasswordV] = useState("");
+  const navigate=useNavigate()
 
   async function handleChangePassword(e) {
     e.preventDefault();
@@ -39,6 +41,7 @@ const ForgotPassword = () => {
             progress: undefined,
             theme: "dark",
           });
+          navigate("/dashboard")
         }
         // else {
         //   toast.error("Please verify your password", {
@@ -106,4 +109,4 @@ const ForgotPassword = () => {
   );
 };
 
-export default ForgotPassword;
+export default CreatePassword;

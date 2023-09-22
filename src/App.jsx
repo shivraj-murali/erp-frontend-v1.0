@@ -41,9 +41,9 @@ export default function App() {
         <SignupForm />
       </div> */}
 
-      <div>
+      {/* <div>
         <CreateOTP />
-      </div>
+      </div> */}
 
       {/* <div>
         <ForgotPassword />
