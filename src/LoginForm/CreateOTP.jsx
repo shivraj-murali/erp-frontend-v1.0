@@ -38,9 +38,9 @@ const CreateOTP = () => {
       );
 
       const result = await response.json();
-      console.log(result.sucess);
+      console.log(typeof result.sucess);
 
-      if (result.sucess == true) {
+      if (result.sucess == "true") {
         setIsTrue(true);
       } else {
         toast.error("Enter a valid email", {
@@ -53,21 +53,8 @@ const CreateOTP = () => {
           progress: undefined,
           theme: "dark",
         });
-        setInterval(() => window.location.reload(), 3000);
+        // setInterval(() => window.location.reload(), 3000);
       }
-
-      // result.sucess == true
-      //   ? setIsTrue(true)
-      //   : toast.error("Enter a valid email", {
-      //       position: "top-right",
-      //       autoClose: 1500,
-      //       hideProgressBar: false,
-      //       closeOnClick: true,
-      //       pauseOnHover: true,
-      //       draggable: true,
-      //       progress: undefined,
-      //       theme: "dark",
-      //     });
     } else {
       toast.error("Enter a valid email", {
         position: "top-right",
