@@ -4,13 +4,25 @@ import PieChart from "./Piechart";
 import WorksOverview from "./WorksOverview";
 import Sidebar from "./SideBar";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
+
+  const navigate=useNavigate()
+
   const [chartData, setChartData] = useState([
     { id: "Pending", label: "Pending", value: 0 },
     { id: "Completed", label: "Completed", value: 0 },
     { id: "Incomplete", label: "Complete", value: 0 },
   ]);
+
+  useEffect(
+    ()=>{
+      if(!localStorage.getItem('emp_id')){
+        navigate('/login')
+      }
+    },
+  [])
 
   useEffect(function () {
     async function getApi() {

@@ -4,9 +4,29 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import axios from "axios";
 import TopBar from "./TopBar";
 import Sidebar from "./SideBar";
+import { useNavigate } from "react-router-dom";
 
 const Calendar = () => {
+
+  const navigate=useNavigate()
+
+  useEffect(
+    ()=>{
+      if(!localStorage.getItem('emp_id')){
+        navigate('/login')
+      }
+    },
+  [])
+  
   const [task, setTask] = useState([{}]);
+
+  useEffect(
+    ()=>{
+      if(!localStorage.getItem('emp_id')){
+        navigate('/login')
+      }
+    },
+  [])
 
   useEffect(function () {
     async function getEvent() {

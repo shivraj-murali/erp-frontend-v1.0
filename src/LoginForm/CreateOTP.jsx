@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Link, useNavigation } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import OtpInput from "react-otp-input";
 const CreateOTP = () => {
@@ -9,6 +9,7 @@ const CreateOTP = () => {
   const [otp, setOtp] = useState("");
   const [isClicked, setIsClicked] = useState(false);
   const [isTrue, setIsTrue] = useState(false);
+  const navigate=useNavigate()
 
   function Button() {
     return (
@@ -100,6 +101,7 @@ const CreateOTP = () => {
         theme: "dark",
       });
       localStorage.setItem("email", JSON.stringify(email));
+      navigate("/createpass")
     } else {
       toast.error("Invalid Otp", {
         position: "top-right",
