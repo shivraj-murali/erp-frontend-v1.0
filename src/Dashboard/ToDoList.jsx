@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useNavigation } from "react-router-dom";
 import { Switch } from "@headlessui/react";
 import { InfinitySpin } from "react-loader-spinner";
 import Sidebar from "./SideBar";
@@ -31,6 +31,8 @@ const ToDoList = () => {
     getTask();
   }, []);
 
+  let nav = useNavigate();
+
   return (
     <div className="  bg-darkBg h-full">
       <TopBar />
@@ -45,7 +47,7 @@ const ToDoList = () => {
             <div className="relative overflow-x-auto shadow-md sm:rounded-lg bg-mainBg">
               <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                 <TableHead />
-                <TaskList tasks={tasks} />
+                <TaskList tasks={tasks} nav={nav} />
               </table>
             </div>
           )}
@@ -55,7 +57,7 @@ const ToDoList = () => {
   );
 };
 
-function Task({ task }) {
+function Task({ task, nav }) {
   const [taskId, setTaskId] = useState(0);
   const handleUpdate = async () => {
     // setTaskId(task.task_id);
@@ -80,6 +82,8 @@ function Task({ task }) {
       }
     );
     console.log(res);
+    nav("/dashboard");
+    nav("/tasks");
   };
 
   return (
@@ -103,27 +107,17 @@ function Task({ task }) {
   );
 }
 
-function TaskList({ tasks }) {
+function TaskList({ tasks, nav }) {
   return (
     <tbody>
       {tasks.map((task) =>
         task.status === "completed" ? (
           <></>
         ) : (
-          <Task task={task} key={crypto.randomUUID()} />
+          <Task task={task} key={crypto.randomUUID()} nav={nav} />
         )
       )}
     </tbody>
-  );
-}
-
-async function updateStatus() {
-  const res = await axios.post(
-    "https://erp-django.onrender.com/erp/update_task_status/",
-    {
-      emp_id: localStorage.getItem("emp_id"),
-      status: "completed",
-    }
   );
 }
 
