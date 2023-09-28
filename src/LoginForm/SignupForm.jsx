@@ -7,7 +7,7 @@ const SignupForm = () => {
   const [verified, setVerified] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate=useNavigate()
+  const navigate = useNavigate();
 
   const data = { email, password };
 
@@ -30,8 +30,9 @@ const SignupForm = () => {
     console.log(result);
 
     if (result.sucess == "true") {
-      localStorage.setItem("emp_id",result.emp_id)
-      
+      localStorage.setItem("emp_id", result.emp_id);
+      localStorage.setItem("emp_name", result.employee_name);
+
       toast.success(result.message, {
         position: "top-right",
         autoClose: 1500,
@@ -42,7 +43,7 @@ const SignupForm = () => {
         progress: undefined,
         theme: "dark",
       });
-      navigate('/dashboard')
+      navigate("/dashboard");
     } else {
       setVerified(false);
       toast.error(result.message, {
@@ -57,8 +58,6 @@ const SignupForm = () => {
       });
     }
   };
-
-  
 
   return (
     <div className="bg-mainBg h-screen">
@@ -116,11 +115,9 @@ const SignupForm = () => {
         </button>
 
         <Link to="/forgotpassword">
-        <button
-          className="text-white bg-red font-medium rounded-lg text-sm px-5 py-2.5 text-center  inline-block"
-        >
-          Forgot Password
-        </button>
+          <button className="text-white bg-red font-medium rounded-lg text-sm px-5 py-2.5 text-center  inline-block">
+            Forgot Password
+          </button>
         </Link>
       </form>
     </div>

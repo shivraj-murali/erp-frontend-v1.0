@@ -7,31 +7,28 @@ import Sidebar from "./SideBar";
 import { useNavigate } from "react-router-dom";
 
 const Calendar = () => {
+  const navigate = useNavigate();
 
-  const navigate=useNavigate()
+  useEffect(() => {
+    if (!localStorage.getItem("emp_id")) {
+      navigate("/login");
+    }
+  }, []);
 
-  useEffect(
-    ()=>{
-      if(!localStorage.getItem('emp_id')){
-        navigate('/login')
-      }
-    },
-  [])
-  
   const [task, setTask] = useState([{}]);
 
-  useEffect(
-    ()=>{
-      if(!localStorage.getItem('emp_id')){
-        navigate('/login')
-      }
-    },
-  [])
+  useEffect(() => {
+    if (!localStorage.getItem("emp_id")) {
+      navigate("/login");
+    }
+  }, []);
 
   useEffect(function () {
     async function getEvent() {
       const res = await axios.get(
-        "https://erp-django.onrender.com/erp/tasks/1/"
+        `https://erp-django.onrender.com/erp/tasks/${localStorage.getItem(
+          "emp_id"
+        )}/`
       );
       for (let i = 0; i < res.data.length; i++) {
         setTask((task) => [
@@ -44,17 +41,17 @@ const Calendar = () => {
   }, []);
 
   return (
-    <div  className="bg-darkBg h-full">
+    <div className="bg-darkBg h-full">
       <TopBar />
 
       <div style={{ gridTemplateColumns: "1fr 12fr" }} className="grid">
         <Sidebar />
-<div style={{marginLeft:"-2rem"}}>
-        <FullCalendar
-          plugins={[dayGridPlugin]}
-          initialView="dayGridMonth"
-          events={task}
-        />
+        <div style={{ marginLeft: "-2rem" }}>
+          <FullCalendar
+            plugins={[dayGridPlugin]}
+            initialView="dayGridMonth"
+            events={task}
+          />
         </div>
       </div>
     </div>

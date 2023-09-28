@@ -7,8 +7,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
-
-  const navigate=useNavigate()
+  const navigate = useNavigate();
 
   const [chartData, setChartData] = useState([
     { id: "Pending", label: "Pending", value: 0 },
@@ -16,18 +15,18 @@ const HomePage = () => {
     { id: "Incomplete", label: "Complete", value: 0 },
   ]);
 
-  useEffect(
-    ()=>{
-      if(!localStorage.getItem('emp_id')){
-        navigate('/login')
-      }
-    },
-  [])
+  useEffect(() => {
+    if (!localStorage.getItem("emp_id")) {
+      navigate("/login");
+    }
+  }, []);
 
   useEffect(function () {
     async function getApi() {
       const res = await axios.get(
-        "https://erp-django.onrender.com/erp/task_status/1/"
+        `https://erp-django.onrender.com/erp/task_status/${localStorage.getItem(
+          "emp_id"
+        )}/`
       );
       const pending = res.data.Pending;
       const incomplete = res.data.InProgress;
