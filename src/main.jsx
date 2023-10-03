@@ -1,9 +1,6 @@
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import {
-  RouterProvider,
-  createBrowserRouter
-} from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import LandingPage from "./LandingPage/LandingPage.jsx";
 import ForgotPassword from "./LoginForm/ForgotPassword.jsx";
 import SignupForm from "./LoginForm/SignupForm.jsx";
@@ -12,9 +9,7 @@ import ProjectList from "./Dashboard/ProjectList.jsx";
 import Calendar from "./Dashboard/Calendar.jsx";
 import CreateOTP from "./LoginForm/CreateOTP";
 import CreatePassword from "./CreatePassword";
-
-
-
+import ToDoList from "./Dashboard/ToDoList";
 
 const router = createBrowserRouter([
   {
@@ -23,7 +18,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/login",
-    element: <SignupForm/>,
+    element: <SignupForm />,
   },
   {
     path: "/forgotpassword",
@@ -31,20 +26,24 @@ const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element:<HomePage/>
+    element: <HomePage />,
   },
   {
-    path:"/calendar",
-    element:<Calendar/>
+    path: "/calendar",
+    element: <Calendar />,
   },
   {
-    path:"/project",
-    element:<ProjectList/>
+    path: "/project",
+    element: <ProjectList />,
   },
   {
-    path:"/createpass",
-    element:<CreatePassword/>
-  }
+    path: "/createpass",
+    element: <CreatePassword />,
+  },
+  {
+    path: "/tasks",
+    element: <ToDoList />,
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(

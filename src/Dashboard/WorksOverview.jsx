@@ -12,7 +12,9 @@ const WorksOverview = () => {
   useEffect(function () {
     const getDetail = async () => {
       const res = await axios.get(
-        "https://erp-django.onrender.com/erp/tasks/2/"
+        `https://erp-django.onrender.com/erp/tasks/${localStorage.getItem(
+          "emp_id"
+        )}/`
       );
       setProj(res.data.length);
     };
@@ -22,7 +24,9 @@ const WorksOverview = () => {
   useEffect(function () {
     async function getApi() {
       const res = await axios.get(
-        "https://erp-django.onrender.com/erp/task_status/1/"
+        `https://erp-django.onrender.com/erp/task_status/${localStorage.getItem(
+          "emp_id"
+        )}/`
       );
       setTask(res.data.Pending);
       setTotalTask(res.data.Pending + res.data.Completed + res.data.InProgress);
