@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, redirect, useNavigate, useNavigation } from "react-router-dom";
-
+import logo from "./erpImage.png"
 const Hero = () => {
   const navigate = useNavigate();
   const reDirect = () => {
@@ -35,7 +35,7 @@ const Hero = () => {
       </div>
       <div>
         <img
-          src={"src/LandingPage/Hero/erpImage.png"}
+          src={logo}
           alt=""
           className="w-full h-auto p-0 m-0 pt-7 align-middle"
         />
