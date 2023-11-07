@@ -43,6 +43,7 @@ const CreateOTP = () => {
 
       if (result.sucess == "true") {
         setIsTrue(true);
+        localStorage.setItem('email',(email))
       } else {
         toast.error("Enter a valid email", {
           position: "top-right",
