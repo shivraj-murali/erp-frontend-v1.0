@@ -12,7 +12,7 @@ const HomePage = () => {
   const [chartData, setChartData] = useState([
     { id: "Pending", label: "Pending", value: 0 },
     { id: "Completed", label: "Completed", value: 0 },
-    { id: "Incomplete", label: "Complete", value: 0 },
+    // { id: "Incomplete", label: "Completed", value: 0 },
   ]);
 
   useEffect(() => {
@@ -34,15 +34,15 @@ const HomePage = () => {
 
       setChartData((chartData) => [
         { ...chartData[0], value: pending },
-        { ...chartData[1], value: incomplete },
-        { ...chartData[2], value: complete },
+        // { ...chartData[1], value: incomplete },
+        { ...chartData[1], value: complete },
       ]);
     }
     getApi();
   }, []);
   return (
     <div className="overflow-hidden">
-      <div className="  bg-darkBg h-full">
+      <div className="  bg-blk h-full">
         <TopBar />
 
         <div

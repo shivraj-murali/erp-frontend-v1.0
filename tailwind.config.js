@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+const { nextui } = require("@nextui-org/react");
+
 export default {
   content: ["./index.html",
   "./src/**/*.{js,ts,jsx,tsx}",
@@ -25,7 +27,8 @@ export default {
       'green': "rgb(132 204 22)",
       "red": "rgb(244 63 94)",
       "black":"#000",
-      "grey": "#888"
+      "grey": "#383838",
+      "blk": "#222"
     },
     extend: {
       fontFamily: {
@@ -34,6 +37,7 @@ export default {
       },
     },
   },
-  plugins: [],
+  darkMode: "class",
+  plugins: [nextui()],
 }
 

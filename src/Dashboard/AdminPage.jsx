@@ -1,6 +1,5 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { InfinitySpin } from "react-loader-spinner";
 import Sidebar from "./SideBar";
 import TopBar from "./TopBar";
 import { useNavigate } from "react-router-dom";
@@ -12,7 +11,7 @@ import {
   TableRow,
   TableCell,
 } from "@nextui-org/react";
-const ProjectList = () => {
+const AdminPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -22,31 +21,25 @@ const ProjectList = () => {
   }, []);
   const [isLoading, setIsLoading] = useState(false);
   const [task, setTask] = useState([]);
+
   useEffect(() => {
-    async function getProjects() {
+    async function getEmpDetails() {
       setIsLoading(true);
       const res = await axios.get(
-        `https://erp-django.onrender.com/erp/projects/${localStorage.getItem(
-          "emp_id"
-        )}/`
+        `https://erp-django.onrender.com/erp/project/`
       );
-      const data = res.data;
-      setTask(res.data);
-
+      console.log(res.data.data.values[0]);
+      setTask(res.data.data.values);
       setIsLoading(false);
     }
-    getProjects();
+    getEmpDetails();
   }, []);
-
-  //   function Loader() {
-  //     return <p className="text-center text-3xl">Loading ...</p>;
-  //   }
 
   function Loader() {
     return (
-      <div className="flex justify-center">
-        <InfinitySpin width="200" color="#4fa94d" />
-      </div>
+      <p className="font-jakarta text-white text-center">
+        Getting Projects Summary...
+      </p>
     );
   }
 
@@ -57,7 +50,9 @@ const ProjectList = () => {
         <Sidebar />
 
         <div style={{ marginLeft: "-2rem" }}>
-          <h2 className="text-4xl text-center my-4 mt-6">Projects Lineup</h2>
+          <h2 className="text-4xl text-center my-4 mt-6">
+            Admin Project Lineup
+          </h2>
           {isLoading ? (
             <Loader />
           ) : (
@@ -79,7 +74,16 @@ function TableHead() {
     <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 font-jakarta">
       <tr>
         <th scope="col" className="px-2 py-3 text-center text-lg">
-          Project
+          Project Id
+        </th>
+        <th scope="col" className="px-2 py-3 text-center text-lg">
+          Project Name
+        </th>
+        <th scope="col" className="px-2 py-3 text-center text-lg">
+          Client
+        </th>
+        <th scope="col" className="px-2 py-3 text-center text-lg">
+          Project Leader
         </th>
         <th scope="col" className="px-2 py-3 text-center text-lg">
           Start Date
@@ -99,8 +103,20 @@ function Tablebody({ task }) {
   return (
     <tr className="bg-grey border-1 dark:bg-gray-900 border-white font-xl">
       <td className="px-2 py-4 font-semibold text-center text-base font-jakarta">
-        {task.project_name}
+        {task.project_id}
       </td>
+      <td className="px-2 py-4 text-center text-base font-jakarta">
+        {task.description}
+      </td>
+
+      <td className="px-2 py-4 text-center text-base font-jakarta">
+        {task.client}
+      </td>
+
+      <td className="px-2 py-4 text-center text-base font-jakarta">
+        {task.project_leader}
+      </td>
+
       <td className="px-2 py-4 text-center text-base font-jakarta">
         {task.start_date}
       </td>
@@ -108,6 +124,7 @@ function Tablebody({ task }) {
       <td className="px-2 py-4 text-center text-base font-jakarta">
         {task.end_date}
       </td>
+
       {task.status === "completed" ? (
         <td className="px-2 py-4 font-semibold !text-green text-center text-base font-jakarta">
           {task.status}
@@ -130,5 +147,4 @@ function TableElements({ task }) {
     </tbody>
   );
 }
-
-export default ProjectList;
+export default AdminPage;

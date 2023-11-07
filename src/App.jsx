@@ -10,6 +10,7 @@ import SignupForm from "./LoginForm/SignupForm";
 import Calendar from "./Dashboard/Calendar";
 import CreateOTP from "./LoginForm/CreateOTP";
 import ForgotPassword from "./ForgotPassword";
+import AdminPage from "./Dashboard/AdminPage.jsx";
 
 export default function App() {
   return (

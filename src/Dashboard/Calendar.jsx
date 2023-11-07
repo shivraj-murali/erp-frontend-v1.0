@@ -41,12 +41,20 @@ const Calendar = () => {
   }, []);
 
   return (
-    <div className="bg-darkBg h-full">
+    <div className="bg-blk h-full">
       <TopBar />
 
-      <div style={{ gridTemplateColumns: "1fr 12fr" }} className="grid">
+      <div style={{ gridTemplateColumns: "1fr 12fr" }} className="grid ">
         <Sidebar />
-        <div style={{ marginLeft: "-2rem" }}>
+        <div
+          style={{
+            marginLeft: "-2rem",
+            paddingLeft: "10px",
+            paddingRight: "10px",
+            paddingTop: "10px",
+            padding: "10px",
+          }}
+        >
           <FullCalendar
             plugins={[dayGridPlugin]}
             initialView="dayGridMonth"

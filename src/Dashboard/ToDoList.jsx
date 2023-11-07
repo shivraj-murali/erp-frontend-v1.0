@@ -13,9 +13,7 @@ const ToDoList = () => {
 
   function Loader() {
     return (
-      <div className="flex justify-center">
-        <InfinitySpin width="200" color="#4fa94d" />
-      </div>
+      <div className="flex justify-center">Fetching your pending tasks...</div>
     );
   }
 
@@ -34,7 +32,7 @@ const ToDoList = () => {
   let nav = useNavigate();
 
   return (
-    <div className="  bg-darkBg h-full">
+    <div className="  bg-blk h-full">
       <TopBar />
       <div className="grid" style={{ gridTemplateColumns: "1fr 12fr" }}>
         <Sidebar />
@@ -44,8 +42,8 @@ const ToDoList = () => {
           {isLoading ? (
             <Loader />
           ) : (
-            <div className="relative overflow-x-auto shadow-md sm:rounded-lg bg-mainBg">
-              <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+            <div className="relative overflow-x-auto shadow-md sm:rounded-lg text-center">
+              <table className="w-9/12 text-sm text-center text-gray-500 dark:text-gray-400 mx-auto">
                 <TableHead />
                 <TaskList tasks={tasks} nav={nav} />
               </table>
@@ -60,20 +58,6 @@ const ToDoList = () => {
 function Task({ task, nav }) {
   const [taskId, setTaskId] = useState(0);
   const handleUpdate = async () => {
-    // setTaskId(task.task_id);
-    // parseInt(taskId);
-    // console.log(task.task_id);
-
-    // const response = await fetch(
-    //   "https://erp-django.onrender.com/erp/update_task_status/",
-    //   {
-    //     method: "POST",
-    //     body: JSON.stringify({
-    //       task_id: task.task_id,
-    //       status: "completed",
-    //     }),
-    //   }
-    // );
     const res = await axios.post(
       "https://erp-django.onrender.com/erp/update_task_status/",
       {
@@ -82,19 +66,18 @@ function Task({ task, nav }) {
       }
     );
     console.log(res);
-    nav("/dashboard");
-    nav("/tasks");
+    location.reload();
   };
 
   return (
-    <tr className="bg-lightBg border-b dark:bg-gray-900 dark:border-gray-700 font-xl">
-      <td className="px-6 py-4 font-semibold">{task.task_title}</td>
-      <td className="px-6 py-4">{task.task_desc}</td>
-      <td className="px-6 py-4">{task.start_date}</td>
+    <tr className="bg-lightBg border-b dark:bg-gray-900 dark:border-gray-700 font-xl text-center">
+      <td className="px-6 py-4 font-semibold bg-grey">{task.task_title}</td>
+      <td className="px-6 py-4 bg-grey">{task.task_desc}</td>
+      <td className="px-6 py-4 bg-grey">{task.start_date}</td>
 
-      <td className="px-6 py-4">{task.end_date}</td>
+      <td className="px-6 py-4 bg-grey">{task.end_date}</td>
       {/* <td className="px-6 py-4">{task.status}</td> */}
-      <td className="px-6 py-4">
+      <td className="px-6 py-4 bg-grey">
         <button
           type="button"
           className="focus:outline-none text-white bg-green hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"

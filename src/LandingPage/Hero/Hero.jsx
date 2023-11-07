@@ -1,6 +1,11 @@
 import React from "react";
+import { Link, redirect, useNavigate, useNavigation } from "react-router-dom";
 
 const Hero = () => {
+  const navigate = useNavigate();
+  const reDirect = () => {
+    navigate("/login");
+  };
   return (
     <div
       className="Hero grid grid-cols-2  place-content-between px-7 py-12 bg-mainBg h-[85vh]"
@@ -15,12 +20,17 @@ const Hero = () => {
           with the ultimate ERP tool <br /> for your business
         </p>
         <div className="cta-button my-8 text-xl align-middle">
-          <button className="font-jakarta rounded-full bg-buttoncta border-white border-2 px-6 align-middle py-1 mr-7 hover:scale-90">
-            <a href="#About">Signup Now</a>
+          <button
+            className="ml-2  py-1 bg-blue-500 text-white hover:bg-blue-600 rounded-full bg-inherit border-white border-2 font-playfair hover:bg-lightMain text-base p-3 "
+            onClick={reDirect}
+          >
+            Employee Login
           </button>
-          <button className="font-jakarta rounded-full bg-inherit border-white border-2 px-6 py-1 hover:scale-90">
-            <a href="#About">Learn More &darr;</a>
-          </button>
+          <a href="https://erp-django.onrender.com/admin/">
+            <button className="ml-2  py-1 bg-blue-500 text-white hover:bg-blue-600 rounded-full bg-inherit border-white border-2 font-playfair hover:bg-lightMain text-base p-3">
+              Admin Login
+            </button>
+          </a>
         </div>
       </div>
       <div>
