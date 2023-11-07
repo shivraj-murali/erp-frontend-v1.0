@@ -10,7 +10,8 @@ import Calendar from "./Dashboard/Calendar.jsx";
 import CreateOTP from "./LoginForm/CreateOTP";
 import CreatePassword from "./CreatePassword";
 import ToDoList from "./Dashboard/ToDoList";
-
+import AdminPage from "./Dashboard/AdminPage";
+import AdminDashboard from "./Dashboard/Admin/AdminDashboard";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -43,6 +44,14 @@ const router = createBrowserRouter([
   {
     path: "/tasks",
     element: <ToDoList />,
+  },
+  {
+    path: "/admin",
+    element: <AdminPage />,
+  },
+  {
+    path: "/adminpanel",
+    element: <AdminDashboard />,
   },
 ]);
 

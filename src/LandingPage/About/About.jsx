@@ -1,6 +1,5 @@
 import React from "react";
 
-
 {
   /* <h3 className="text-center pt-2 text-lg font-semibold font-serif">Calendar</h3> */
 }
@@ -14,8 +13,8 @@ const About = () => {
       <h1 className="text-4xl text-center mb-5 font-playfair">
         Solutions We Provide
       </h1>
-      <div className="flex ">
-        <div className="AboutElements mb-9">
+      <div className="grid" style={{ gridTemplateColumns: "1fr 1fr 1fr" }}>
+        <div className="AboutElements mb-9 ">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -34,13 +33,6 @@ const About = () => {
           <h3 className="text-center pt-2 text-lg font-semibold font-serif">
             Centralised Data Management
           </h3>
-
-          <p className=" pt-3 font-jakarta text-justify pr-4">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo
-            molestiae provident sint aliquid dolorum natus veritatis ab
-            eligendi, quibusdam ea, quasi dolorem iusto, vitae odit voluptate
-            odio recusandae fuga iste.
-          </p>
         </div>
 
         <div className="AboutElements">
@@ -61,12 +53,6 @@ const About = () => {
           <h3 className="text-center pt-2 text-lg font-semibold font-serif">
             Personalised Task Planner
           </h3>
-          <p className=" pt-3 font-jakarta text-justify pr-4">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo
-            molestiae provident sint aliquid dolorum natus veritatis ab
-            eligendi, quibusdam ea, quasi dolorem iusto, vitae odit voluptate
-            odio recusandae fuga iste.
-          </p>
         </div>
 
         <div className="AboutElements">
@@ -88,17 +74,10 @@ const About = () => {
           <h3 className="text-center pt-2 text-lg font-semibold font-serif">
             Smart Data Analytics
           </h3>
-
-          <p className=" pt-3 font-jakarta text-justify pr-4">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo
-            molestiae provident sint aliquid dolorum natus veritatis ab
-            eligendi, quibusdam ea, quasi dolorem iusto, vitae odit voluptate
-            odio recusandae fuga iste.
-          </p>
         </div>
       </div>
 
-      <div className="flex">
+      <div className="grid" style={{ gridTemplateColumns: "1fr 1fr 1fr" }}>
         <div className="AboutElements">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -118,13 +97,6 @@ const About = () => {
           <h3 className="text-center pt-2 text-lg font-semibold font-serif">
             Calendar
           </h3>
-
-          <p className=" pt-3 font-jakarta text-justify pr-4">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo
-            molestiae provident sint aliquid dolorum natus veritatis ab
-            eligendi, quibusdam ea, quasi dolorem iusto, vitae odit voluptate
-            odio recusandae fuga iste.
-          </p>
         </div>
 
         <div className="AboutElements">
@@ -146,13 +118,6 @@ const About = () => {
           <h3 className="text-center pt-2 text-lg font-semibold font-serif">
             Employee Portal
           </h3>
-
-          <p className=" pt-3 font-jakarta text-justify pr-4">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo
-            molestiae provident sint aliquid dolorum natus veritatis ab
-            eligendi, quibusdam ea, quasi dolorem iusto, vitae odit voluptate
-            odio recusandae fuga iste.
-          </p>
         </div>
 
         <div className="AboutElements">
@@ -174,13 +139,6 @@ const About = () => {
           <h3 className="text-center pt-2 text-lg font-semibold font-serif">
             Business Standardization
           </h3>
-
-          <p className=" pt-3 font-jakarta text-justify pr-4">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo
-            molestiae provident sint aliquid dolorum natus veritatis ab
-            eligendi, quibusdam ea, quasi dolorem iusto, vitae odit voluptate
-            odio recusandae fuga iste.
-          </p>
         </div>
       </div>
     </div>

@@ -40,6 +40,7 @@ function CreatePassword() {
 
       if (response.ok) {
         setPasswordCreated(true);
+        navigate("/login");
       } else {
         console.error("Password update failed");
       }

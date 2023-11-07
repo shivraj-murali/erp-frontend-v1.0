@@ -111,7 +111,7 @@ const SignupForm = () => {
           type="submit"
           className="text-white bg-red font-medium rounded-lg text-sm px-5 py-2.5 text-center mx-5 my-4 inline-block"
         >
-          Login Now
+          Employee Login
         </button>
 
         <Link to="/forgotpassword">

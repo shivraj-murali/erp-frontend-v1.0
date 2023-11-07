@@ -9,7 +9,7 @@ const CreateOTP = () => {
   const [otp, setOtp] = useState("");
   const [isClicked, setIsClicked] = useState(false);
   const [isTrue, setIsTrue] = useState(false);
-  const navigate=useNavigate()
+  const navigate = useNavigate();
 
   function Button() {
     return (
@@ -100,8 +100,9 @@ const CreateOTP = () => {
         progress: undefined,
         theme: "dark",
       });
-      localStorage.setItem("email", JSON.stringify(email));
-      navigate("/createpass")
+      localStorage.setItem("emp_id", result.emp_id);
+      localStorage.setItem("emp_name", result.employee_name);
+      navigate("/createpass");
     } else {
       toast.error("Invalid Otp", {
         position: "top-right",

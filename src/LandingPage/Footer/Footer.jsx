@@ -8,10 +8,10 @@ const Footer = () => {
       </h2>
       <div className="flex justify-normal justify-evenly">
         <div className="footerLogo ">
-          <div>Logo</div>
+          <div>Employee Hub</div>
           <p className="py-4">
-            Logo is the simplest and most efficient ERP software <br /> that can
-            be used and operated easily by anyone.
+            Employee Hub is the simplest and most efficient ERP software{" "}
+            <br /> that can be used and operated easily by anyone.
           </p>
         </div>
 
@@ -23,7 +23,10 @@ const Footer = () => {
           </h2>
           <ul>
             <li className="py-2 pr-8">
-              <a href="#" className="pr-3">
+              <a
+                href="https://github.com/shivraj-murali/erp-frontend-v1.0"
+                className="pr-3"
+              >
                 Github Repo
               </a>
               <span>
@@ -43,7 +46,7 @@ const Footer = () => {
                 </svg>
               </span>
             </li>
-            <li className="py-2 pr-8">
+            {/* <li className="py-2 pr-8">
               <a href="#" className="pr-3">
                 Research Paper
               </a>
@@ -84,7 +87,7 @@ const Footer = () => {
                   />
                 </svg>
               </span>
-            </li>
+            </li> */}
           </ul>
         </div>
       </div>
