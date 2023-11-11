@@ -14,7 +14,7 @@ const CreatePassword = () => {
     console.log(email);
     if (password.length > 0) {
       if (password === passwordV) {
-        const data = { email: JSON.parse(email), password };
+        const data = { email: (email), password };
         const response = await fetch(
           "https://erp-auth.onrender.com/employee/genpass",
           {
@@ -27,8 +27,8 @@ const CreatePassword = () => {
         );
 
         const result = await response.json();
-
-        console.log(result);
+          console.log(result);
+        
 
         if (result.sucess == "true") {
           toast.success(result.message, {
@@ -41,6 +41,10 @@ const CreatePassword = () => {
             progress: undefined,
             theme: "dark",
           });
+
+          
+          localStorage.setItem("emp_id", result.emp_id);
+          localStorage.setItem("emp_name", result.employee_name);
           navigate("/dashboard")
         }
         // else {
